@@ -17,9 +17,9 @@ var gameOver,restart;
 var restart_i , gameOver_i;
 
 function preload(){
- 
- bg1 = loadImage("bg.png");
- bg2 = loadImage("bg2.jpg");
+changeBackground__img();
+ //bg1 = loadImage("bg.png");
+ //bg2 = loadImage("bg2.jpg");
  mario_running = loadImage("mario.jpg");
  mario_dying = loadImage("mario dying.jpg");
  coinImage = loadImage("coin.png");
@@ -67,8 +67,8 @@ function setup() {
 }
 
 function draw() {
-  //if(background1)
-  background();
+  if(background1)
+  background(background1);
   noStroke();
   fill('red');
   text("Score: "+ score, 500, 50);
@@ -195,10 +195,10 @@ function spawnCoins2() {
 
   function changeBackground__img ()  {
     if(score < 30){
-     background1 =  bg1 ;
+     bg = "bg.png" ;
     }
     else {
-      background1 =  bg2 ;
+      bg = " bg2.jpg" ;
     }
-   
+   background1 = loadImage(bg);
   }
